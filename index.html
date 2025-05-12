@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Ashir Muhammad | Full Stack Web Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">Ashir Muhammad</div>
+    <ul class="navbar-links">
+      <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
+      <li><a href="#projects"><i class="fa-solid fa-briefcase"></i> Projects</a></li>
+      <li><a href="#skills"><i class="fa-solid fa-code"></i> Skills</a></li>
+      <li><a href="#education"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
+      <li><a href="#languages"><i class="fa-solid fa-language"></i> Languages</a></li>
+      <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+    </ul>
+  </nav>
+  <div class="cv-container">
+    <header id="about" class="profile-section">
+      <img src="https://avatars.githubusercontent.com/u/52703606?v=4" alt="Ashir Muhammad" class="profile-img" />
+      <div class="profile-info">
+        <h1>Ashir Muhammad</h1>
+        <h2><i class="fa-solid fa-laptop-code"></i> Full Stack Web Developer</h2>
+        <p class="about-me">
+          <span id="typewriter-static">I am </span>
+          <span id="typewriter-dynamic"></span>
+          <span id="typewriter-cursor">|</span>
+        </p>
+        <a href="SHA-CV.pdf" class="btn btn-download" download>
+          <i class="fa-solid fa-file-arrow-down"></i> Download PDF CV
+        </a>
+      </div>
+    </header>
+    <section id="projects" class="section">
+      <h2><i class="fa-solid fa-briefcase"></i> Projects</h2>
+      <div class="card-list">
+        <div class="card project-card">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?fit=crop&w=400&q=80" alt="Recipe Roulette" class="project-img">
+          <h3><i class="fa-solid fa-utensils"></i> Recipe Roulette</h3>
+          <p>Spin the roulette to get a new recipe idea for today, complete with full instructions.</p>
+          <div class="tech-stack">
+            <span>React</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>NodeJS</span>
+            <span>MongoDB</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-live" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+            <a href="https://github.com/ashir734734/recipe-roulette" class="btn btn-github" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+        <div class="card project-card">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?fit=crop&w=400&q=80" alt="Live Weather App" class="project-img">
+          <h3><i class="fa-solid fa-cloud-sun"></i> Live Weather App</h3>
+          <p>Get real-time weather updates and dynamic backgrounds based on your location and current weather.</p>
+          <div class="tech-stack">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-live" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+            <a href="https://github.com/ashir734734/live-weather-app" class="btn btn-github" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+        <div class="card project-card">
+          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?fit=crop&w=400&q=80" alt="ToDo List" class="project-img">
+          <h3><i class="fa-solid fa-list-check"></i> ToDo List</h3>
+          <p>Organize your day with a ToDo List that saves your tasks locally and retrieves them on reload.</p>
+          <div class="tech-stack">
+            <span>React</span>
+            <span>HTML</span>
+            <span>Tailwind CSS</span>
+            <span>NodeJS</span>
+            <span>MongoDB</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-live" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+            <a href="https://github.com/ashir734734/todo-list" class="btn btn-github" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+        <div class="card project-card">
+          <img src="https://images.unsplash.com/photo-1517602302552-471fe67acf66?fit=crop&w=400&q=80" alt="Nextflix Project" class="project-img">
+          <h3><i class="fa-solid fa-film"></i> Nextflix</h3>
+          <p>A full-stack Netflix-inspired streaming platform-free to use! Built for seamless movie browsing and streaming, just like Netflix.</p>
+          <div class="tech-stack">
+            <span>React</span>
+            <span>NodeJS</span>
+            <span>MongoDB</span>
+            <span>HTML</span>
+            <span>CSS</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/GreenFieldGroup6/nextflix" class="btn btn-github" target="_blank">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="skills" class="section">
+      <h2><i class="fa-solid fa-code"></i> Technologies</h2>
+      <div class="card skills-card">
+        <div class="skills-list">
+          <span title="React"><i class="fa-brands fa-react"></i> React</span>
+          <span title="NodeJS"><i class="fa-brands fa-node-js"></i> NodeJS</span>
+          <span title="ExpressJS"><i class="fa-solid fa-server"></i> ExpressJS</span>
+          <span title="MongoDB"><i class="fa-solid fa-database"></i> MongoDB</span>
+          <span title="PHP"><i class="fa-brands fa-php"></i> PHP</span>
+          <span title="Git"><i class="fa-brands fa-git-alt"></i> Git</span>
+          <span title="Postman"><i class="fa-solid fa-flask"></i> Postman</span>
+          <span title="JavaScript"><i class="fa-brands fa-js"></i> JavaScript</span>
+          <span title="HTML"><i class="fa-brands fa-html5"></i> HTML</span>
+          <span title="CSS"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+          <span title="Bootstrap"><i class="fa-brands fa-bootstrap"></i> Bootstrap</span>
+          <span title="MySQL"><i class="fa-solid fa-database"></i> MySQL</span>
+        </div>
+      </div>
+    </section>
+    <section id="education" class="section">
+      <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+      <div class="card edu-card">
+        <div>
+          <strong>Full Stack Web Development</strong><br>
+          Social Hackers Academy
+        </div>
+        <div>
+          <strong>Intermediate in Commerce</strong><br>
+          Punjab Group of Colleges
+        </div>
+      </div>
+    </section>
+    <section id="languages" class="section">
+      <h2><i class="fa-solid fa-language"></i> Languages</h2>
+      <div class="card lang-card">
+        <div>
+          <strong>European:</strong> Swedish, Greek, Norwegian, English
+        </div>
+        <div>
+          <strong>Asian:</strong> Urdu, Punjabi, Hindi
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="section">
+      <h2><i class="fa-solid fa-envelope"></i> Contact</h2>
+      <div class="card contact-card">
+        <div class="contact-list">
+          <a href="tel:+46764444022"><i class="fa-solid fa-phone"></i> +46 76 444 4022</a>
+          <a href="mailto:ashir734734@gmail.com"><i class="fa-solid fa-envelope"></i> ashir734734@gmail.com</a>
+          <a href="https://ashir.nl" target="_blank"><i class="fa-solid fa-globe"></i> ashir.nl</a>
+          <a href="https://discordapp.com/users/705592720923557959" target="_blank"><i class="fab fa-discord"></i> Muhammad Ashir</a>
+          <a href="https://github.com/ashir734734" target="_blank"><i class="fab fa-github"></i> ashir734734</a>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    const words = [
+      "a React Developer",
+      "a Frontend Specialist",
+      "a UI Engineer",
+      "an Analytical Thinker",
+      "a Problem Solver",
+      "a Strong Communicator",
+      "a Team Player",
+      "a Fast Learner",
+      "Adaptable & Curious",
+      "Passionate about Clean Code",
+      "Detail-Oriented",
+      "Driven by Continuous Learning",
+      "a Creative Coder",
+      "a Web Performance Advocate",
+      "a CSS Expert",
+      "a JavaScript Enthusiast"
+    ];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let typing = true;
+    const dynamic = document.getElementById("typewriter-dynamic");
+    function type() {
+      if (typing) {
+        if (charIndex < words[wordIndex].length) {
+          dynamic.textContent += words[wordIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(type, 90);
+        } else {
+          typing = false;
+          setTimeout(type, 1200);
+        }
+      } else {
+        if (charIndex > 0) {
+          dynamic.textContent = words[wordIndex].substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(type, 40);
+        } else {
+          typing = true;
+          wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(type, 300);
+        }
+      }
+    }
+    type();
+  </script>
+</body>
+</html>
