@@ -5,13 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Ashir Muhammad | Full Stack Web Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <nav class="navbar">
-    <div class="navbar-brand">Ashir Muhammad</div>
+    <div class="navbar-brand" id="stickyName">Ashir Muhammad</div>
     <ul class="navbar-links">
       <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
       <li><a href="#projects"><i class="fa-solid fa-briefcase"></i> Projects</a></li>
@@ -90,6 +91,9 @@
           <img src="https://images.unsplash.com/photo-1517602302552-471fe67acf66?fit=crop&w=400&q=80" alt="Nextflix Project" class="project-img">
           <h3><i class="fa-solid fa-film"></i> Nextflix</h3>
           <p>A full-stack Netflix-inspired streaming platform-free to use! Built for seamless movie browsing and streaming, just like Netflix.</p>
+          <div class="private-note">
+            <i class="fa-solid fa-lock"></i> This project is private but can be presented upon request.
+          </div>
           <div class="tech-stack">
             <span>React</span>
             <span>NodeJS</span>
@@ -121,6 +125,8 @@
           <span title="CSS"><i class="fa-brands fa-css3-alt"></i> CSS</span>
           <span title="Bootstrap"><i class="fa-brands fa-bootstrap"></i> Bootstrap</span>
           <span title="MySQL"><i class="fa-solid fa-database"></i> MySQL</span>
+           <span title="Android Application Modding"><i class="fa-brands fa-android"></i> Android Application Modding</span>
+  <span title="Android Reverse Engineering"><i class="fa-solid fa-microscope"></i> Android Reverse Engineering</span>
         </div>
       </div>
     </section>
@@ -154,13 +160,36 @@
         <div class="contact-list">
           <a href="tel:+46764444022"><i class="fa-solid fa-phone"></i> +46 76 444 4022</a>
           <a href="mailto:ashir734734@gmail.com"><i class="fa-solid fa-envelope"></i> ashir734734@gmail.com</a>
-          <a href="https://ashir.nl" target="_blank"><i class="fa-solid fa-globe"></i> ashir.nl</a>
+          <a href="https://ashir734734.github.io/cv/" target="_blank"><i class="fa-solid fa-globe"></i> ashir734734.github.io/cv/</a>
           <a href="https://discordapp.com/users/705592720923557959" target="_blank"><i class="fab fa-discord"></i> Muhammad Ashir</a>
           <a href="https://github.com/ashir734734" target="_blank"><i class="fab fa-github"></i> ashir734734</a>
+          <a href="https://wa.me/46764444022" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
       </div>
     </section>
   </div>
+
+  <a href="https://wa.me/46764444022" class="floating-contact-btn whatsapp-fab" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <button class="floating-contact-btn" id="contactFab" aria-label="Contact">
+    <i class="fa-solid fa-paper-plane"></i>
+  </button>
+  <div class="contact-modal" id="contactModal">
+    <div class="contact-modal-content">
+      <button class="modal-close" id="closeModal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <h2>Contact Me</h2>
+      <div class="contact-modal-list">
+        <a href="tel:+46764444022"><i class="fa-solid fa-phone"></i> +46 76 444 4022</a>
+        <a href="mailto:ashir734734@gmail.com"><i class="fa-solid fa-envelope"></i> ashir734734@gmail.com</a>
+        <a href="https://ashir734734.github.io/cv/" target="_blank"><i class="fa-solid fa-globe"></i> ashir734734.github.io/cv/</a>
+        <a href="https://discordapp.com/users/705592720923557959" target="_blank"><i class="fab fa-discord"></i> Muhammad Ashir</a>
+        <a href="https://github.com/ashir734734" target="_blank"><i class="fab fa-github"></i> ashir734734</a>
+        <a href="https://wa.me/46764444022" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
   <script>
     const words = [
       "a React Developer",
@@ -207,6 +236,37 @@
       }
     }
     type();
+
+    const stickyName = document.getElementById('stickyName');
+    const navbar = document.querySelector('.navbar');
+    const profileSection = document.querySelector('.profile-section');
+    function checkScroll() {
+      const profileBottom = profileSection.getBoundingClientRect().bottom;
+      if (profileBottom < 50) {
+        navbar.classList.add('show-brand');
+      } else {
+        navbar.classList.remove('show-brand');
+      }
+    }
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('resize', checkScroll);
+    checkScroll();
+
+    const contactFab = document.getElementById('contactFab');
+    const contactModal = document.getElementById('contactModal');
+    const closeModal = document.getElementById('closeModal');
+    contactFab.addEventListener('click', () => {
+      contactModal.classList.add('open');
+    });
+    closeModal.addEventListener('click', () => {
+      contactModal.classList.remove('open');
+    });
+    contactModal.addEventListener('click', (e) => {
+      if (e.target === contactModal) contactModal.classList.remove('open');
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === "Escape") contactModal.classList.remove('open');
+    });
   </script>
 </body>
 </html>
