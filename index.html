@@ -13,7 +13,10 @@
 <body>
   <nav class="navbar">
     <div class="navbar-brand" id="stickyName">Ashir Muhammad</div>
-    <ul class="navbar-links">
+    <button class="nav-toggle" id="navToggle" aria-label="Open navigation">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <ul class="navbar-links" id="navbarLinks">
       <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
       <li><a href="#projects"><i class="fa-solid fa-briefcase"></i> Projects</a></li>
       <li><a href="#skills"><i class="fa-solid fa-code"></i> Skills</a></li>
@@ -21,6 +24,7 @@
       <li><a href="#languages"><i class="fa-solid fa-language"></i> Languages</a></li>
       <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
     </ul>
+    <div class="nav-overlay" id="navOverlay"></div>
   </nav>
   <div class="cv-container">
     <header id="about" class="profile-section">
@@ -125,8 +129,8 @@
           <span title="CSS"><i class="fa-brands fa-css3-alt"></i> CSS</span>
           <span title="Bootstrap"><i class="fa-brands fa-bootstrap"></i> Bootstrap</span>
           <span title="MySQL"><i class="fa-solid fa-database"></i> MySQL</span>
-           <span title="Android Application Modding"><i class="fa-brands fa-android"></i> Android Application Modding</span>
-  <span title="Android Reverse Engineering"><i class="fa-solid fa-microscope"></i> Android Reverse Engineering</span>
+          <span title="Android Application Modding"><i class="fa-brands fa-android"></i> Android Application Modding Specialist</span>
+          <span title="Android Reverse Engineering"><i class="fa-solid fa-microscope"></i> Android Reverse Engineer</span>
         </div>
       </div>
     </section>
@@ -168,7 +172,6 @@
       </div>
     </section>
   </div>
-
   <a href="https://wa.me/46764444022" class="floating-contact-btn whatsapp-fab" target="_blank" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
@@ -189,8 +192,29 @@
       </div>
     </div>
   </div>
-
   <script>
+    // Hamburger menu logic
+    const navToggle = document.getElementById('navToggle');
+    const navbarLinks = document.getElementById('navbarLinks');
+    const navOverlay = document.getElementById('navOverlay');
+    navToggle.addEventListener('click', () => {
+      navbarLinks.classList.toggle('open');
+      navOverlay.classList.toggle('show');
+      document.body.classList.toggle('nav-open');
+    });
+    navOverlay.addEventListener('click', () => {
+      navbarLinks.classList.remove('open');
+      navOverlay.classList.remove('show');
+      document.body.classList.remove('nav-open');
+    });
+    document.querySelectorAll('.navbar-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navbarLinks.classList.remove('open');
+        navOverlay.classList.remove('show');
+        document.body.classList.remove('nav-open');
+      });
+    });
+
     const words = [
       "a React Developer",
       "a Frontend Specialist",
