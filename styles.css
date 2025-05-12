@@ -74,21 +74,78 @@
   margin: 0;
   padding: 0;
   align-items: center;
+  transition: right 0.3s, opacity 0.3s;
 }
-.navbar-links a {
-  color: var(--navbar-link);
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 2rem;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+.nav-overlay {
+  display: none;
+}
+
+.navbar-links a,
+.navbar-links a:visited,
+.navbar-links a:active {
+  color: var(--navbar-link) !important;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: color 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 4px 0;
 }
+
 .navbar-links a:hover,
 .navbar-links a:focus {
-  color: var(--navbar-link-active);
+  color: var(--navbar-link-active) !important;
+}
+
+@media (max-width: 900px) {
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    width: 70vw;
+    max-width: 320px;
+    height: 100vh;
+    background: var(--card-bg);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 2.5rem 1.5rem 1.5rem 2rem;
+    box-shadow: -2px 0 16px rgba(0,0,0,0.18);
+    z-index: 1001;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .navbar-links.open {
+    right: 0;
+    opacity: 1;
+    pointer-events: all;
+    transition: right 0.3s, opacity 0.3s;
+  }
+  .nav-toggle {
+    display: block;
+  }
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.38);
+    z-index: 1000;
+    transition: opacity 0.3s;
+  }
+  .nav-overlay.show {
+    display: block;
+  }
+}
+@media (max-width: 600px) {
+  .navbar-links {
+    width: 90vw;
+    max-width: none;
+    padding: 2.5rem 1rem 1.5rem 1.2rem;
+  }
 }
 body {
   background: var(--bg);
@@ -464,12 +521,6 @@ body {
   .card {
     min-width: unset;
   }
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.7rem;
-    padding: 0.7rem 1rem;
-  }
 }
 @media (max-width: 600px) {
   .profile-img {
@@ -493,8 +544,9 @@ body {
     padding: 8px 2px;
   }
   .navbar-links {
-    flex-direction: column;
-    gap: 0.6rem;
+    width: 90vw;
+    max-width: none;
+    padding: 2.5rem 1rem 1.5rem 1.2rem;
   }
   .contact-modal-content {
     padding: 1.1rem 0.5rem;
