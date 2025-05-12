@@ -16,6 +16,8 @@
   --navbar-bg: #1a1d23;
   --navbar-link: #e0e0e0;
   --navbar-link-active: #59ff67;
+  --modal-bg: rgba(20,24,32,0.95);
+  --whatsapp-green: #25d366;
 }
 @media (prefers-color-scheme: light) {
   :root {
@@ -36,6 +38,8 @@
     --navbar-bg: #fff;
     --navbar-link: #222;
     --navbar-link-active: #59ff67;
+    --modal-bg: rgba(255,255,255,0.96);
+    --whatsapp-green: #25d366;
   }
 }
 .navbar {
@@ -55,6 +59,13 @@
   font-weight: 700;
   color: var(--accent);
   letter-spacing: 1px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.navbar.show-brand .navbar-brand {
+  opacity: 1;
+  pointer-events: all;
 }
 .navbar-links {
   list-style: none;
@@ -62,6 +73,7 @@
   gap: 1.5rem;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 .navbar-links a {
   color: var(--navbar-link);
@@ -220,6 +232,15 @@ body {
   font-size: 0.98rem;
   color: var(--text-secondary);
 }
+.private-note {
+  color: var(--accent-alt);
+  font-size: 0.98rem;
+  margin: 6px 0 0 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-style: italic;
+}
 .tech-stack {
   margin: 4px 0 0 0;
   display: flex;
@@ -328,6 +349,107 @@ body {
   background: var(--accent);
   color: #181a20;
 }
+.floating-contact-btn {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  background: var(--accent-alt);
+  color: #fff;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  border: none;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 500;
+  transition: background 0.2s;
+}
+.floating-contact-btn:hover {
+  background: var(--accent);
+  color: #181a20;
+}
+.whatsapp-fab {
+  right: 32px;
+  bottom: 100px;
+  background: var(--whatsapp-green);
+  color: #fff;
+}
+.whatsapp-fab:hover {
+  background: #128C7E;
+}
+.whatsapp-link {
+  color: var(--whatsapp-green) !important;
+}
+.whatsapp-link:hover {
+  color: #128C7E !important;
+}
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  background: var(--modal-bg);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: background 0.3s;
+}
+.contact-modal.open {
+  display: flex;
+}
+.contact-modal-content {
+  background: var(--card-bg);
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  position: relative;
+  min-width: 300px;
+  max-width: 95vw;
+  text-align: center;
+}
+.contact-modal-content h2 {
+  margin: 0 0 1rem 0;
+  color: var(--accent-alt);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.contact-modal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+.contact-modal-list a {
+  color: var(--accent);
+  font-size: 1.07rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.contact-modal-list a:hover {
+  color: var(--accent-alt);
+}
+.modal-close {
+  position: absolute;
+  right: 14px;
+  top: 16px;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.modal-close:hover {
+  color: var(--accent-alt);
+}
 @media (max-width: 1100px) {
   .cv-container {
     max-width: 100vw;
@@ -373,6 +495,20 @@ body {
   .navbar-links {
     flex-direction: column;
     gap: 0.6rem;
+  }
+  .contact-modal-content {
+    padding: 1.1rem 0.5rem;
+  }
+  .floating-contact-btn {
+    right: 16px;
+    bottom: 16px;
+    width: 46px;
+    height: 46px;
+    font-size: 1.1rem;
+  }
+  .whatsapp-fab {
+    right: 16px;
+    bottom: 70px;
   }
 }
 body, .cv-container, .card, .skills-card, .edu-card, .lang-card {
